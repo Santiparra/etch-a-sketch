@@ -1,14 +1,17 @@
 let paleta = "comun";
 const padre = document.querySelector("#ventanaPadre")
+let cuadraditos = 0;
 
 function poblar() {
-    let slider = document.getElementById("myRange");
-    let cuadraditos = slider.value;
-    let areaAPoblar = cuadraditos * cuadraditos;
-    for (; cuadraditos < areaAPoblar; cuadraditos++){
+    for (cuadraditos = 0; cuadraditos < 1024; cuadraditos++){
         const nuevoCuadrado = document.createElement("div");
         padre.appendChild(nuevoCuadrado);
     }  
+}
+
+function reiniciar(){
+    var aBorrar = document.querySelectorAll("#ventanaPadre > div");
+    aBorrar.forEach(cuadrado => cuadrado.style.backgroundColor = "#f5f5f5");
 }
 
 function cambiarColores(paleta) {
@@ -43,7 +46,7 @@ item.addEventListener("click", () => {
     }  else if (paleta === "random") {
         cambiarColores("random")
     }  else if (paleta === "reiniciar") {
-        poblar();    
+        reiniciar();    
     } 
 }
 )}
