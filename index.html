@@ -7,12 +7,22 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="cabecera">Etch A Sketch</div>
         <div id="ventanaPadre"></div>
         <div id="controles">
-            <button id="comun">comun</button>
-            <button id="borrador">borrador</button>
-            <button id="random">random</button>
-            <button id="reiniciar">reiniciar</button>
+            <div class="colores">
+                <p>Paletas de colores:</p>
+                <button class="button" style="vertical-align:middle" id="comun"><span>Comun</span></button>
+                <button class="button" style="vertical-align:middle" id="random"><span>Random</span></button>
+            </div>
+            <div class="borrado">    
+                <p>Utilidades de borrado:</p>
+                <button class="button" style="vertical-align:middle" id="borrador"><span>Borrador</span></button>
+                <button class="button" style="vertical-align:middle" id="reiniciar"><span>Reiniciar</span></button>
+            </div>
+            <div class="barra-seleccion-tamaño">Tamaño de la cuadricula:
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            </div>
             </div>
         </div>        
     </body>

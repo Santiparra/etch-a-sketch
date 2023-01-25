@@ -1,12 +1,122 @@
+:root {
+  --columnas: repeat(50, auto); 
+  --altura: 3px;
+  --ancho: 3px 
+}
+/*Height y width aqui no son variables, al cambiar habria que cambiar la var del js*/
+body {
+  background-color: #008080;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #ventanaPadre {
     display: inline-grid;
     border: 1px solid black;
-    grid-gap: 0.2px;
-    background-color: grey;
-    grid-template-columns: repeat(32, auto);
+    grid-gap: 0px;
+    height: 150px;
+    width: 150px;
+    background-color: #f5f5f5;
+    grid-template-columns: var(--columnas);
 }  
 #ventanaPadre > div {
     background-color: #f5f5f5;
-    height: 3px;
-    width: 3px;
+    height: var(--altura);
+    width: var(--ancho);
+}
+
+#controles {
+  display: flex;
+  flex-direction: column;
+  background-color: #d3d3d3;
+}
+.colores,
+.borrado,
+.barra-seleccion-tamaño {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 5px;
+  padding: 2px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -2px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 8px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.barra-seleccion-tamaño {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 5px;
+  height: 5px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.colores p,
+.borrado p,
+.barra-seleccion-tamaño {
+  font-size: 5px;
 }

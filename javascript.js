@@ -1,12 +1,47 @@
 let paleta = "comun";
-const padre = document.querySelector("#ventanaPadre")
 let cuadraditos = 0;
+let alturaVentanaPadre = 150;
+let anchoVentanaPadre = 150;
+let alturaCaja = 1.5;
+let anchoCaja = 1.5;
+let cantidadColumnas = 50;
+const padre = document.querySelector("#ventanaPadre")
+var r = document.querySelector(":root");
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+
+
+//altura y ancho = columnas / altura y ancho ventana padre
+//cantidad cajas = columnas * columnas
+slider.oninput = function() {
+    cantidadColumnas = this.value;
+    redimensionar();
+    poblar();
+}
+
+function redimensionar() {
+    alturaCaja = alturaVentanaPadre / cantidadColumnas;
+    anchoCaja = anchoVentanaPadre / cantidadColumnas;
+    r.style.setProperty("--columnas", `repeat(${cantidadColumnas}, auto)`);
+    r.style.setProperty("--altura", `${alturaCaja}px`);
+    r.style.setProperty("--ancho", `${anchoCaja}px`);
+
+}
+
+function despoblar() {
+    let cajasEnPantalla = document.querySelectorAll("#ventanaPadre > div");
+    cajasEnPantalla.forEach(cajaEnPantalla => cajaEnPantalla.remove());
+    cuadraditos = 0;
+}
 
 function poblar() {
-    for (cuadraditos = 0; cuadraditos < 1024; cuadraditos++){
+    despoblar();
+    cantidadCajas = cantidadColumnas * cantidadColumnas;
+    for (; cuadraditos < cantidadCajas; cuadraditos++){
         const nuevoCuadrado = document.createElement("div");
         padre.appendChild(nuevoCuadrado);
-    }  
+    } 
+    cambiarColores("comun"); 
 }
 
 function reiniciar(){
@@ -34,23 +69,33 @@ function cambiarColores(paleta) {
       });
     });
 }
-const botonesControl = document.querySelectorAll("#controles > button");
+const botonesControl = document.querySelectorAll("#controles > .colores > button");
 
 botonesControl.forEach((item) => {
 item.addEventListener("click", () => {
     paleta = item.id;
     if (paleta === "comun") {
         cambiarColores("comun")
-    } else if (paleta === "borrador") {
-        cambiarColores("borrador")
     }  else if (paleta === "random") {
         cambiarColores("random")
-    }  else if (paleta === "reiniciar") {
+    }  
+}
+)}
+)
+const botonesBorrado = document.querySelectorAll("#controles > .borrado > button");
+
+botonesBorrado.forEach((item) => {
+item.addEventListener("click", () => {
+    paleta = item.id;
+    if (paleta === "borrador") {
+       cambiarColores("borrador")
+    } else if (paleta === "reiniciar") {
         reiniciar();    
     } 
 }
 )}
 )
+
 function paletaRandom() {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
