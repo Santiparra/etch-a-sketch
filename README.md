@@ -1,4 +1,6 @@
 # etch-a-sketch
+Proyecto a Revisitar.
+Por hacer: - Responsive.
 
 El objetivo del proyecto es poner a prueba nuestro conocimiento sobre Eventos, Métodos y alteración de DOM. 
 
