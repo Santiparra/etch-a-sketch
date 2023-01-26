@@ -27,61 +27,37 @@ body {
     width: var(--ancho);
 }
 
+.cabecera {
+  color: #460614;
+  font-family: 'Fredericka the Great';
+  font-size: 22px;
+}
+
 #controles {
   display: flex;
   flex-direction: column;
-  background-color: #d3d3d3;
+  background-color: #0d0d0d;
+  border-radius: 1px;
 }
 .colores,
 .borrado,
 .barra-seleccion-tamaño {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 6px;
   padding: 2px;
 }
 
 .button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #460614; 
   border: none;
-  color: #FFFFFF;
+  width: 24px;
+  padding: 0px;
   text-align: center;
-  font-size: 5px;
-  padding: 2px;
-  width: auto;
-  transition: all 0.5s;
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -2px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 8px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
 }
 
 .barra-seleccion-tamaño {
-  width: 100%;
+  width: 95%;
 }
 
 .slider {
@@ -93,6 +69,7 @@ body {
   opacity: 0.7;
   -webkit-transition: .2s;
   transition: opacity .2s;
+
 }
 
 .slider:hover {
@@ -104,19 +81,21 @@ body {
   appearance: none;
   width: 5px;
   height: 5px;
-  background: #04AA6D;
+  background: #460614;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: #04AA6D;
+  background: #460614;
   cursor: pointer;
 }
 
 .colores p,
 .borrado p,
-.barra-seleccion-tamaño {
+.barra-seleccion-tamaño,
+.button {
   font-size: 5px;
+  color: whitesmoke;
 }

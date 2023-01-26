@@ -5,6 +5,7 @@
         <title>Etch a sketch</title>
         <script src="javascript.js" defer></script>
         <link rel="stylesheet" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Fredericka the Great' rel='stylesheet'>
     </head>
     <body>
         <div class="cabecera">Etch A Sketch</div>
@@ -12,13 +13,13 @@
         <div id="controles">
             <div class="colores">
                 <p>Paletas de colores:</p>
-                <button class="button" style="vertical-align:middle" id="comun"><span>Comun</span></button>
-                <button class="button" style="vertical-align:middle" id="random"><span>Random</span></button>
+                <button class="button" id="comun">Común</button>
+                <button class="button" id="random">Random</button>
             </div>
             <div class="borrado">    
                 <p>Utilidades de borrado:</p>
-                <button class="button" style="vertical-align:middle" id="borrador"><span>Borrador</span></button>
-                <button class="button" style="vertical-align:middle" id="reiniciar"><span>Reiniciar</span></button>
+                <button class="button"  id="borrador">Borrador</button>
+                <button class="button" id="reiniciar">Reiniciar</button>
             </div>
             <div class="barra-seleccion-tamaño">Tamaño de la cuadricula:
             <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
