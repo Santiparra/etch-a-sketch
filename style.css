@@ -105,3 +105,21 @@ body {
   font-size: 18px;
   color: whitesmoke;
 }
+
+.footer {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer > p {
+  font-style:oblique;
+  color: white;
+}
+
+img {
+  height: 30px;
+  width: 30px;
+}
